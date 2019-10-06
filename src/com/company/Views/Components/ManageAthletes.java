@@ -40,7 +40,7 @@ public class ManageAthletes extends JPanel implements ListSelectionListener,Acti
         this.root=root;
         back=new JButton("back");
         add(back);
-        athletes = new Vector(10, 10);
+        athletes = root.athletes.athletes;
         athleteModel = new AthleteModel(athletes);
         athleteTable = new JTable(athleteModel);
         athleteTable.updateUI();
@@ -136,7 +136,7 @@ class AthleteForm extends JPanel implements ActionListener{
         lastName=new JTextField(15);
         sportLabel=new JLabel("Sport");
         sport=new JList<Sport>(root.getSports().getSports());
-
+        sport.setSelectedIndex(0);
         ageLabel=new JLabel("Age");
         age=new JSpinner(fillAgeSpinner());
         clear=new JButton("clear");

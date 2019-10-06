@@ -10,11 +10,18 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 
 public class AthleteHome extends JPanel {
+    JLabel firstLabel;
     JTextField firstName;
+    JLabel lastnNameLabel;
+
     JTextField lastName;
+    JLabel ageLabel;
     JTextField age;
+    JLabel sportLabel;
     JTextField sport;
+    JLabel tailleLabel;
     JSlider taille;
+    JLabel poidLabel;
     JSlider poids;
     JLabel taillLabel;
     JLabel poidsLabel;
@@ -23,16 +30,26 @@ public class AthleteHome extends JPanel {
 
     public AthleteHome() {
         Athlete athlete=AthleteSession.getAthlete();
-        this.firstName = new JTextField(athlete.getFirstName());
-        this.lastName = new JTextField(athlete.getLastName());
-        this.age = new JTextField(athlete.getAge());
-        this.sport = new JTextField(athlete.getSport());
+        this.firstName = new JTextField(15);
+        firstName.setText(athlete.getFirstName());
+        this.lastName = new JTextField(15);
+        lastName.setText(athlete.getLastName());
+        this.age = new JTextField(15);
+        age.setText(String.valueOf(athlete.getAge()));
+        this.sport = new JTextField(15);
+        sport.setText(athlete.getSport());
         this.taille = new JSlider();
         this.poids = new JSlider();
         taille.setValue((int) athlete.getTaille());
         poids.setValue((int) athlete.getPoids());
         taillLabel=new JLabel();
         poidsLabel=new JLabel();
+        firstLabel=new JLabel("firstName");
+        lastnNameLabel=new JLabel("Lastname");
+        ageLabel=new JLabel("age");
+        sportLabel=new JLabel("sport");
+        tailleLabel=new JLabel("taille");
+        poidLabel=new JLabel("poids");
 
         firstName.setEnabled(false);
         lastName.setEnabled(false);
@@ -72,8 +89,22 @@ public class AthleteHome extends JPanel {
         gbc.gridwidth = 1;
 
 
+        add(firstLabel, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+//        gbc.insets=(new Insets(5,5,5,5));
+        //La taille en hauteur et en largeur
+        gbc.gridheight = 1;
+        gbc.gridwidth = 1;
         add(firstName, gbc);
         gbc.gridx = 0;
+        gbc.gridy = 1;
+        //La taille en hauteur et en largeur
+        gbc.gridheight = 1;
+        gbc.gridwidth = 1;
+
+        add(lastnNameLabel, gbc);
+        gbc.gridx = 1;
         gbc.gridy = 1;
         //La taille en hauteur et en largeur
         gbc.gridheight = 1;
@@ -85,8 +116,20 @@ public class AthleteHome extends JPanel {
         //La taille en hauteur et en largeur
         gbc.gridheight = 1;
         gbc.gridwidth = 1;
+        add(ageLabel, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        //La taille en hauteur et en largeur
+        gbc.gridheight = 1;
+        gbc.gridwidth = 1;
         add(age, gbc);
         gbc.gridx = 0;
+        gbc.gridy = 3;
+        //La taille en hauteur et en largeur
+        gbc.gridheight = 1;
+        gbc.gridwidth = 1;
+        add(sportLabel, gbc);
+        gbc.gridx = 1;
         gbc.gridy = 3;
         //La taille en hauteur et en largeur
         gbc.gridheight = 1;
@@ -97,7 +140,7 @@ public class AthleteHome extends JPanel {
         //La taille en hauteur et en largeur
         gbc.gridheight = 1;
         gbc.gridwidth = 1;
-        add(taillLabel, gbc);
+        add(tailleLabel, gbc);
         gbc.gridx = 1;
         gbc.gridy = 4;
         //La taille en hauteur et en largeur
@@ -105,13 +148,13 @@ public class AthleteHome extends JPanel {
         gbc.gridwidth = 1;
         add(taille, gbc);
         gbc.gridx = 0;
-        gbc.gridy = 5;
+        gbc.gridy = 6;
         //La taille en hauteur et en largeur
         gbc.gridheight = 1;
         gbc.gridwidth = 1;
-        add(poidsLabel, gbc);
+        add(poidLabel, gbc);
         gbc.gridx = 1;
-        gbc.gridy = 5;
+        gbc.gridy = 6;
         //La taille en hauteur et en largeur
         gbc.gridheight = 1;
         gbc.gridwidth = 1;

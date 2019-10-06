@@ -38,7 +38,7 @@ public class AdminHome extends JPanel implements ActionListener {
         athleteList=new JButton("Check Athletes");
         addSports=new JButton("Add new Sport");
         insertAchievements=new JButton("Add Achievement");
-        athletes=new Vector<Athlete>();
+        athletes=root.athletes.athletes;
         athleteModel=new AthleteModel(athletes);
     }
     /**

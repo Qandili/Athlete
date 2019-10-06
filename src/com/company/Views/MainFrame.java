@@ -8,6 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Copyright - Mohamed Elqandili 2019
+ */
 public class MainFrame extends JFrame implements ActionListener{
     AdminController adminController;
     AthleteController athleteController;
@@ -45,9 +48,7 @@ public class MainFrame extends JFrame implements ActionListener{
         adminController=new AdminController(admins);
         athleteController=new AthleteController(athletes);
         System.out.println("main frame");
-        for (int i = 0; i <athletes.size() ; i++) {
-            System.out.println(this.athletes.get(i));
-        }        setBackground(Color.gray);
+        setBackground(Color.gray);
         setMenu();
         setVisible(true);
     }

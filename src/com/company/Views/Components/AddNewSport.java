@@ -34,7 +34,7 @@ public class AddNewSport extends JPanel implements ListSelectionListener,ActionL
         this.root=root;
         back=new JButton("back");
         sportForm=new SportForm(this,root);
-        sports=new Sports();
+        sports=root.getSports();
         jSports=new JList<Sport>(sports.getSports());
         JScrollPane scrollPane=new JScrollPane(jSports);
         // set Orientation for slider
